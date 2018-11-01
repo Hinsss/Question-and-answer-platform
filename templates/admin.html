@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>后台用户中心</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/iconfont.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}" />
+		<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+		<script type="text/javascript">
+		function Responsive($a) {
+			if ($a == true) $("#Device").css("opacity", "100");
+			if ($a == false) $("#Device").css("opacity", "0");
+			$('#iframe-wrap').removeClass().addClass('full-width');
+			$('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+			$(this).addClass('active');
+			return false;
+		};
+		</script>
+
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="bar">
+				<div class="w1200">
+					<span class="l">问答平台<font>用户中心</font></span>
+					<span class="r"><a href="{{url_for('index')}}"><i class="icon iconfont icon-dianyuan"></i>退出</a></span>
+				</div>
+			</div>
+			<div class="user-info">
+				<div class="w1200">
+					<div class="user-headface">
+						<img src="{{url_for('static',filename='images/yoona.jpg')}}"/>
+					</div>
+					<div class="user-account">
+						<p class="tip">你好，{{user.username}}</p>
+					</div>
+					<div class="user-modify">
+						<a href="#">修改资料></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main w1200">
+			<div class="left">
+				<ul>
+					<li>
+						<a href="#" class="active">
+							<i class="icon iconfont icon-lingdang"></i>
+							消息
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="icon iconfont icon-fangzidichan"></i>
+							管理
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="icon iconfont icon-wenda"></i>
+							问答
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="icon iconfont icon-icon--"></i>
+							好友
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="icon iconfont icon-pinglun"></i>
+							评论
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="icon iconfont icon-geren"></i>
+							个人资料
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="icon iconfont icon-jilu"></i>
+							记录
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right">
+				<div class="tap">
+					<span>系统消息</span>
+				</div>
+				<div class="container">
+					<div class="no-doc">
+						<img src="{{url_for('static',filename='images/no_doc.jpg')}}"/>
+						<p>您还没有消息哦~</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+
+</html>
